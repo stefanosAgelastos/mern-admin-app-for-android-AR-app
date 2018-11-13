@@ -3,6 +3,27 @@ import React, { Component } from 'react';
 
 
 class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      userName: "",
+      password: ""
+    }
+  }
+
+  setUserName(e) {
+    let userName = e.target.value
+    this.setState({ userName })
+  }
+
+  setPassword(e) {
+    let password = e.target.value
+    this.setState({ password })
+  }
+  btnClick() {
+    console.log("Username: " + this.state.userName + "\nPassword: " + this.state.password);
+  }
   render() {
     return (
       <div className="row">
@@ -19,6 +40,7 @@ class App extends Component {
               onKeyPress={this._handleKeyPress} />
 
           </div>
+          <button onClick={() => this.btnClick()}>click me</button>
         </div>
       </div>
 
