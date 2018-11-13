@@ -1,0 +1,18 @@
+{
+  "name": "gps-back",
+  "version": "1.0.0",
+  "description": "Kea final project",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "start-dev": "DATABASE_URL=$(heroku config:get DATABASE_URL -a gps-tourist-app) nodemon ./app.js"
+  },
+  "author": "Stefanos Agelastos",
+  "license": "MIT",
+  "dependencies": {
+    "doctor": "^0.3.0",
+    "express": "^4.16.3",
+    "g": "^2.0.1",
+    "npm": "^6.1.0"
+  }
+}
