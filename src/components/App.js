@@ -27,10 +27,11 @@ class App extends Component {
 
   btnClick() {
     //console.log("Username: " + this.state.userName + "\nPassword: " + this.state.password);
-    axios.post('http://localhost:3001', {
-      firstName: this.state.userName,
-      passWord: this.state.password
-    })
+    axios.
+      axios.post('http://localhost:3001', {
+        firstName: this.state.userName,
+        passWord: this.state.password
+      })
       .then(function (response) {
         console.log(response);
       })
@@ -38,6 +39,7 @@ class App extends Component {
         console.log(error);
       });
   }
+
 
 
 
