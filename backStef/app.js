@@ -28,7 +28,7 @@ const db = {
 }
 
 /* initialize server */
-server.listen("3001", function (err) {
+server.listen(process.env.PORT, function (err) {
     if (err) {
         console.log("Error starting the server", err);
     }
