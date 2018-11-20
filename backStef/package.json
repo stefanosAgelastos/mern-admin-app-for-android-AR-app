@@ -4,6 +4,10 @@
   "description": "Kea final project",
   "main": "bot.js",
   "scripts": {
+    "set-var": "node ./databaseConnection.js",
+    "create-migration": "knex migrate:make db_schema",
+    "migrate": "knex migrate:latest",
+    "migrate-undo": "knex migrate:rollback",
     "start": "node ./app.js",
     "start-dev": "DATABASE_URL=$(heroku config:get DATABASE_URL -a gps-tourist-app) nodemon ./app.js"
   },
@@ -12,7 +16,10 @@
   "dependencies": {
     "doctor": "^0.3.0",
     "express": "^4.16.3",
-    "knex": "^0.15.2",
-    "npm": "^6.1.0"
+    "knex": "0.14.4",
+    "npm": "^6.1.0",
+    "objection": "^1.0.0",
+    "pg": "^7.6.1",
+    "pg-connection-string": "^2.0.0"
   }
 }
