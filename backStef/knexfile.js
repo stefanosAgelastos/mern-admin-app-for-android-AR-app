@@ -1,9 +1,10 @@
-var connection = require("./databaseConnection");
 
 module.exports = {
 
   development: {
     client: 'postgresql',
-    connection: 'insertUrlHere'
+    connection: process.env.DATABASE_URL,
+    ssl: true
   }
-};
+
+}

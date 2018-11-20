@@ -1,11 +1,8 @@
-/* CUstom class, for getting the credentials, it makes sure that it returns credentials that can get a connection */
-const connector = require('./databaseConnection');
 const objection = require("objection");
 /* "batteries included" SQL query builder for Postgres etc */
 const Knex = require("knex");
 /* standard file of knex that contains the database connection data */
 const knexConfig = require("./knexfile.js");
-
 const knex = Knex(knexConfig.development);
 
 const express = require("express");

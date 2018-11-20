@@ -4,12 +4,11 @@
   "description": "Kea final project",
   "main": "bot.js",
   "scripts": {
-    "set-var": "node ./databaseConnection.js",
     "create-migration": "knex migrate:make db_schema",
     "migrate": "knex migrate:latest",
     "migrate-undo": "knex migrate:rollback",
-    "start": "node ./app.js",
-    "start-dev": "DATABASE_URL=$(heroku config:get DATABASE_URL -a gps-tourist-app) nodemon ./app.js"
+    "start": "node backStef/app.js",
+    "start-dev": "set DATABASE_URL=$(heroku config:get DATABASE_URL -a gps-tourist-app) nodemon backStef/app.js"
   },
   "author": "Stefanos Agelastos",
   "license": "MIT",
