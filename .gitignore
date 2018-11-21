@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /backStef/node_modules
+/backStef/DEVELOPMENT SCRIPTS
 
 # testing
 /coverage

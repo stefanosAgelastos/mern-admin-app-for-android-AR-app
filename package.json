@@ -8,7 +8,7 @@
     "migrate": "knex migrate:latest",
     "migrate-undo": "knex migrate:rollback",
     "start": "node backStef/app.js",
-    "start-dev": "set DATABASE_URL=$(heroku config:get DATABASE_URL -a gps-tourist-app) nodemon backStef/app.js"
+    "start-dev": "set NODE_ENV=LOCAL_DEV&& nodemon backStef/app.js"
   },
   "author": "Stefanos Agelastos",
   "license": "MIT",
