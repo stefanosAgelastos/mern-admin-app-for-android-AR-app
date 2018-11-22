@@ -23,9 +23,9 @@ module.exports = {
                     /* If there is no error, we store the uri */
                     console.log("Got URL from Heroku CLI: " + out)
                     /* remove last character,  its a new line character*/
-                    //out = out.substring(0, out.length - 1);
+                    out = out.substring(0, out.length - 1);
                     /* add parameter to enable ssl*/
-                    //var connectionString = out + "?ssl=true";
+                    out = out + "?ssl=true";
                     /* set environment variables */
                     //process.env['DATABASE_URL'] = out;
                     resolve(out);
@@ -35,14 +35,13 @@ module.exports = {
     },
 
     /* RETURNS THE CONNECTION URL IF IT CONNECTS TO THE DATABASE */
-    isConnecting: function(urlString){
-        return new Promise( function (resolve, reject) {
+    isConnecting: function (urlString) {
+        return new Promise(function (resolve, reject) {
             /* create a client with the database connection uri, ssl must be on. */
             const client = new Client({
-                connectionString: urlString,
-                ssl: true
+                connectionString: urlString
             });
-    
+
             /* connect to DB */
             client.connect((err) => {
                 if (err) {

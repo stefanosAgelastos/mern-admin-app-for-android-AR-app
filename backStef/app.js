@@ -22,6 +22,7 @@ const http = require('http');
 //const server = require('http').Server(app);
 /* Parse incoming request bodies in a middleware before your handlers, available under the req.body property. */
 const bodyParser = require('body-parser');
+const objection = require("objection");
 
 /* 
     2. CONFIGURE SETTINGS
@@ -47,23 +48,24 @@ app.on('ready', function () {
 /* 
     3. CONNECT TO DATABASE
 */
+/* convenience object that contains all the models and easy access to knex */
+const db = {
+    "Knex": undefined,
+    "Location": require("./model/Location.js")
+}
 /* Provide Knex with appropirate configuration of database */
 async function connectDatabase() {
-    console.log("Started async method for connecting Knex");
+    console.log("Started async method for setting Knex connection");
     const databaseConfig = await MainConfig.getAndSetDATABASE_URL();
+    console.log("Setting to Knex the databaseConfig: ");
+    console.log(databaseConfig);
     const knex = Knex(databaseConfig);
-    const objection = require("objection");
     const Model = objection.Model;
     // give the knex connection to objection.js
     Model.knex(knex);
-    // convenience object that contains all the models and easy access to knex
-    const db = {
-        "Knex": knex,
-        "Location": require("./model/Location.js")
-    }
+    db.Knex = knex;
 }
-//connectDatabase().then(    // All OK - fire (emit) a ready event. 
-//app.emit('ready'));
+connectDatabase();
 
 
 /* 
@@ -81,6 +83,7 @@ app.use(bodyParser.json());
 */
 /* Serves all locations */
 app.get("/location", function (req, res) {
+    
     db.Location.query().select()
         .then(data => {
             console.log(data);
@@ -95,7 +98,8 @@ app.get("/location", function (req, res) {
 /* 
     6. Start Server 
 */
-
+/* All OK - fire (emit) a ready event. */
+app.emit('ready')
 /* 
     7. Spawn workers with clusters
 */

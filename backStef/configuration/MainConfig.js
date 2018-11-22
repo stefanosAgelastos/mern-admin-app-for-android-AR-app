@@ -15,8 +15,9 @@ module.exports = {
                         return database.isConnecting(result);
                     })
                     .then(function (result) {
-                        process.env.DATABASE_URL = result;
                         console.log("Set DATABASE_URL, for LOCAL_DEV mode");
+                        process.env.DATABASE_URL = result;
+                        knexConfig.development.connection = process.env.DATABASE_URL;
                         resolve(knexConfig.development);
                         console.log("Resolved knexConfig.development");
                     })
