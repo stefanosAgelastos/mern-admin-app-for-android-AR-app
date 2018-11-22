@@ -12,9 +12,10 @@ class Location extends Model {
 
             properties: {
                 id: {type: "string"},
+                name: {type: "string" },
                 lat: {type: "string", minLength: 1},
                 lon: {type: "string", minLength: 1},
-                name: {type: "string" },
+                link: {type: "string", minLength: 1}
             }
         }        
     }

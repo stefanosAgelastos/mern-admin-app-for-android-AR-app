@@ -22,6 +22,14 @@ const http = require('http');
 //const server = require('http').Server(app);
 /* Parse incoming request bodies in a middleware before your handlers, available under the req.body property. */
 const bodyParser = require('body-parser');
+/* Objection.js is an ORM for Node.js that aims to stay out of your way
+An easy declarative way of defining models and relationships between them
+Simple and fun way to fetch, insert, update and delete objects using the full power of SQL
+Powerful mechanisms for eager loading, inserting and upserting object graphs
+A way to store complex documents as single rows
+Completely Promise based API
+Easy to use transactions
+Optional JSON schema validation*/
 const objection = require("objection");
 
 /* 
@@ -81,19 +89,91 @@ app.use(bodyParser.json());
 /* 
     5. Define Routes
 */
+/* Serves index file */
+app.get("/", function (req, res) {
+    res.sendFile(__dirname + "/index.html")
+});
 /* Serves all locations */
 app.get("/location", function (req, res) {
-    
+    console.log("HTTP: serve all locations");
     db.Location.query().select()
         .then(data => {
-            console.log(data);
+            console.log("OK");
+            res.setHeader('Content-Type', 'application/json');
             res.status = "200";
-            res.send(data);
+            res.json(JSON.stringify(data, null, 3));
         })
         .catch(err => {
             console.log(err)
+            res.status = 500;
+            res.send(err);
         });
 });
+/* DELETES ALL LOCATIONS */
+app.delete("/location", function (req, res) {
+    console.log("HTTP: delete all locations");
+
+    db.Location.query().del().then(data => {
+        console.log("OK");
+        res.sendStatus(200);
+    })
+        .catch(err => {
+            console.log(err)
+            res.status = 500;
+            res.send(err);
+        });
+});
+/* ADD ONE NEW LOCATION */
+app.post("/location", function (req, res) {
+    console.log("HTTP: add one location");
+    console.log(req.body);
+
+    db.Location.query().insert(req.body).then(data => {
+        console.log("OK");
+        res.status = "200";
+        res.send(data);
+    })
+        .catch(err => {
+            console.log(err)
+            res.status = 500;
+            res.send(err);
+        });
+});
+/* ADD THREE DEFAULT LOCATIONS */
+app.post("/dump", function (req, res) {
+    console.log("HTTP: add default locations");
+
+    db.Location.query().insert([
+        {
+            "name": 'Rundetaarn',
+            "lat": '1',
+            "lon": '2',
+            "link": 'https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix'
+        },
+        {
+            "name": 'christiania',
+            "lat": '2',
+            "lon": '2',
+            "link": 'http://sermitsiaq.ag/files/styles/930x500/public/media/christiania.jpg?itok=OM19TO4X'
+        },
+        {
+            "name": 'the_little_mermaid_statue',
+            "lat": '3',
+            "lon": '3',
+            "link": 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Copenhagen_-_the_little_mermaid_statue_-_2013.jpg/800px-Copenhagen_-_the_little_mermaid_statue_-_2013.jpg'
+        }
+    ])
+        .then(data => {
+            console.log("OK");
+            res.sendStatus(200);
+        }).catch(err => {
+            console.log(err)
+            res.status = 500;
+            res.send(err);
+        });
+});
+
+
 
 /* 
     6. Start Server 
@@ -104,44 +184,3 @@ app.emit('ready')
     7. Spawn workers with clusters
 */
 
-
-/* initialize server */
-/* The || 3000, is for development, when there is no PORT environment variable set. */
-/* server.listen(process.env.PORT || 3000, function (err) {
-    if (err) {
-        console.log("Error starting the server", err);
-    }
-    console.log("Starting the server on port", server.address().port);
-}); */
-
-/* this methods inserts a location to the database */
-/* db.Location.query().insert({
-    "lat": 'testLat2',
-    "lon": 'testLon2',
-    "name": 'TEST2'
-})
-    .then(persistedLocation => {
-        console.log(persistedLocation);
-    }).catch(err => {
-        console.log(err);
-    });
- */
-
-
-
-
-//db.Location.query().select().then(data => { console.log(data); }).catch(err => { console.log(err) });
-
-
-
-/* this methods inserts a location to the database */
-/* db.Location.query().insert({
-    "lat": 'testLat2',
-    "lon": 'testLon2',
-    "name": 'TEST2'
-})
-    .then(persistedLocation => {
-        console.log(persistedLocation);
-    }).catch(err => {
-        console.log(err);
-    }); */
