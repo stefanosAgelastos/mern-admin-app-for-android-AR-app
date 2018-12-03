@@ -87,12 +87,13 @@ app.use(bodyParser.json());
 
 
 /* 
-    5. Define Routes
+   5 . Define Routes
 */
 /* Serves index file */
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html")
 });
+
 /* Serves all locations */
 app.get("/location", function (req, res) {
     console.log("HTTP: serve all locations");
@@ -109,6 +110,7 @@ app.get("/location", function (req, res) {
             res.send(err);
         });
 });
+
 /* DELETES ALL LOCATIONS */
 app.delete("/location", function (req, res) {
     console.log("HTTP: delete all locations");
@@ -123,6 +125,7 @@ app.delete("/location", function (req, res) {
             res.send(err);
         });
 });
+
 /* ADD ONE NEW LOCATION */
 app.post("/location", function (req, res) {
     console.log("HTTP: add one location");
