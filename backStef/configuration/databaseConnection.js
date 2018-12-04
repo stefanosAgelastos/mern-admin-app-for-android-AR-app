@@ -12,7 +12,7 @@ module.exports = {
     /* you have to be logged in to Heroku CLI locally*/
     getDataBaseURLonLocal: function () {
         return new Promise(function (resolve, reject) {
-            /*  execute console command, 
+            /*  execute console or terminal command, 
             retreives the database uri from Heroku CLI in DEV */
             exec('heroku config:get DATABASE_URL -a gps-tourist-app', (err, out) => {
                 if (err) {
