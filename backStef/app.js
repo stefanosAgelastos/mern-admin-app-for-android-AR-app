@@ -59,7 +59,8 @@ app.on('ready', function () {
 /* convenience object that contains all the models and easy access to knex */
 const db = {
     "Knex": undefined,
-    "Location": require("./model/Location.js")
+    "Location": require("./model/Location.js"),
+    "Image": require("./model/Image.js")
 }
 /* Provide Knex with appropirate configuration of database */
 async function connectDatabase() {
@@ -174,6 +175,87 @@ app.post("/dump", function (req, res) {
             res.status = 500;
             res.send(err);
         });
+});
+
+app.get("/hardcodedlocations", function (req, res) {
+    console.log("HTTP: get hard coded json");
+
+    var data = [{
+
+        "Id": 1,
+        "Lat": 55.6928992,
+        "Lon": 12.5990655,
+        "Name": "The Little Mermaid",
+        "Images": [
+            {
+                "id": 1,
+                "image_title": "The little mermaid",
+                "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Copenhagen_-_the_little_mermaid_statue_-_2013.jpg/800px-Copenhagen_-_the_little_mermaid_statue_-_2013.jpg"
+            },
+            {
+                "id": 2,
+                "image_title": "The round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"  
+            },
+            {
+                "id": 3,
+                "image_title": "Chritiania",
+                "image_url": "http://sermitsiaq.ag/files/styles/930x500/public/media/christiania.jpg?itok=OM19TO4X"  
+            }
+            
+        ]
+    },
+    {
+        "Id": 2,
+        "Lat": 55.706413,
+        "Lon": 12.539542,
+        "Name": "Work 2",
+        "Images": [
+            {
+                "id": 1,
+                "image_title": "The little mermaid",
+                "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Copenhagen_-_the_little_mermaid_statue_-_2013.jpg/800px-Copenhagen_-_the_little_mermaid_statue_-_2013.jpg"
+            },
+            {
+                "id": 2,
+                "image_title": "The round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"  
+            },
+            {
+                "id": 3,
+                "image_title": "Chritiania",
+                "image_url": "http://sermitsiaq.ag/files/styles/930x500/public/media/christiania.jpg?itok=OM19TO4X"  
+            }
+            
+        ]
+    },
+    {
+        "Id": 3,
+        "Lat": 55.706413,
+        "Lon": 12.539542,
+        "Name": "Work 3",
+        "Images": [
+            {
+                "id": 1,
+                "image_title": "The little mermaid",
+                "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Copenhagen_-_the_little_mermaid_statue_-_2013.jpg/800px-Copenhagen_-_the_little_mermaid_statue_-_2013.jpg"
+            },
+            {
+                "id": 2,
+                "image_title": "The round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"  
+            },
+            {
+                "id": 3,
+                "image_title": "Chritiania",
+                "image_url": "http://sermitsiaq.ag/files/styles/930x500/public/media/christiania.jpg?itok=OM19TO4X"  
+            }
+            
+        ]
+    }]
+    res.status = "200";
+    res.send(data);
+
 });
 
 
