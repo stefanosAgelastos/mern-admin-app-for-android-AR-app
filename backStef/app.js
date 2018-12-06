@@ -195,7 +195,7 @@ app.get("/hardcodedlocations", function (req, res) {
             {
                 "id": 2,
                 "image_title": "Headless",
-                "image_url": "ttps://hazlitt.net/sites/default/files/styles/article-header-image/public/field/image/mermaid.jpg?itok=8SN_VACD"
+                "image_url": "https://hazlitt.net/sites/default/files/styles/article-header-image/public/field/image/mermaid.jpg?itok=8SN_VACD"
             },
             {
                 "id": 3,
