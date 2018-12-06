@@ -5,6 +5,10 @@ class Location extends Model {
         return 'locations';
     }
 
+    static get idColumn() {
+        return 'id';
+      }
+
     static get jsonSchema() {
         return {
             type: 'object',
@@ -14,11 +18,22 @@ class Location extends Model {
                 id: {type: "string"},
                 name: {type: "string" },
                 lat: {type: "string", minLength: 1},
-                lon: {type: "string", minLength: 1},
-                link: {type: "string", minLength: 1}
+                lon: {type: "string", minLength: 1}
             }
         }        
     }
-}
 
-module.exports = Location;
+    static get relationMappings () {
+        return {
+          images: {
+            relation: Model.HasManyRelation,
+            modelClass: Image,
+            join: {
+              from: 'locations.id',
+              to: 'images.location_id'
+            }
+          }
+        }
+      }
+}
+module.exports =  Location; 
