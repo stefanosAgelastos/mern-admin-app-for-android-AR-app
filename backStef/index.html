@@ -4,45 +4,123 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+<head>
+  <style>
+    * {
+    box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+   
+   table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+  }
+  
+  td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+      background-color: #dddddd;
+  }
+  </style>
+</head>
+
 <body>
 
-  <div class="w3-card-4">
-    <div class="w3-container w3-brown">
-      <h2>Input Locations</h2>
-    </div>
-    <form class="w3-container w3-half">
-      <p>
-        <label class="w3-text-brown"><b>Location Name</b></label>
-        <input id="name" class="w3-input w3-border w3-sand" type="text"></p>
-      <p>
-        <label class="w3-text-brown"><b>Longitud</b></label>
-        <input id="lat" class="w3-input w3-border w3-sand" type="number"></p>
-      <p>
+  <div class="row">
+    <div class="column">
+      <div>
+        <h2>Input Locations</h2>
+      </div>
+      <form class="w3-container w3-full">
         <p>
-          <label class="w3-text-brown"><b>Latitude</b></label>
-          <input id="lon" class="w3-input w3-border w3-sand" type="number"></p>
+          <label class="w3-text-brown"><b>Location Name</b></label>
+          <input id="name" class="w3-input w3-border w3-sand" type="text"></p>
         <p>
-          <label class="w3-text-brown"><b>Media url link</b></label>
-          <input id="link" class="w3-input w3-border w3-sand" type="text"></p>
+          <label class="w3-text-brown"><b>Longitud</b></label>
+          <input id="lat" class="w3-input w3-border w3-sand" type="number"></p>
         <p>
-          <button id="insert" class="w3-btn w3-brown" type="button">Save Location</button>
-        </p>
-        <p>
-          <button id="delete" class="w3-btn w3-red" type="button">Delete All</button>
-        </p>
-        <p>
-          <button id="dump" class="w3-btn w3-blue" type="button">Dump in the 3 Default Locations</button>
-        </p>
-    </form>
-    <div id="locations" class="w3-container w3-sand w3-half">
+          <p>
+            <label class="w3-text-brown"><b>Latitude</b></label>
+            <input id="lon" class="w3-input w3-border w3-sand" type="number"></p>
+          <p>
+            <label class="w3-text-brown"><b>Media url link</b></label>
+            <input id="link" class="w3-input w3-border w3-sand" type="text"></p>
+          <p>
+            <button id="insert" class="w3-btn w3-brown" type="button">Save Location</button>
+          </p>
+          <p>
+            <button id="delete" class="w3-btn w3-red" type="button">Delete All</button>
+          </p>
+          <p>
+            <button id="dump" class="w3-btn w3-blue" type="button">Dump in the 3 Default Locations</button>
+          </p>
 
+      </form>
+
+      <!-- <div id="locations" class="w3-container w3-sand w3-half">
+    </div> -->
     </div>
+    <div style="padding-top: 40px; max-height: 550px; overflow: auto" class="column">
+      <form class="w3-container w3-full">
+        <table id="myTable">
+
+          <tr>
+            <th>Location Name</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>ID</th>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <button onclick="numbers.forEach(createTable)">Try it</button>
+
   </div>
+
+
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
+
+  var i = 1;
+  var numbers = [4, 9, 16, 2, 2, 2, 2, 2, 5, 1, 2, 6, 34];
+
+  function createTable() {
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(i);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+
+    //change the stuff below to fetch from DB insead of hardcode
+    cell1.innerHTML = "<a href=\"https://www.w3schools.com\">Havfrue</a>";
+    cell2.innerHTML = "52.1231233";
+    cell3.innerHTML = "2.7622402";
+    cell4.innerHTML = i;
+    i++;
+  }
+
   $(document).ready(function () {
     $("#delete").click(function () {
       $.ajax({
@@ -73,7 +151,7 @@
       data.lon = $("#lon").val();
       data.link = $("#link").val();
       console.log(data);
-      
+
       $.ajax({
         url: '/location',
         method: 'POST',
@@ -84,8 +162,8 @@
           reloadData();
         });
     });
-    
-    function reloadData(){
+
+    function reloadData() {
       $.ajax({
         url: '/location',
         method: 'GET'
