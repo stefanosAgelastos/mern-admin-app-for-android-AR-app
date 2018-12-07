@@ -252,7 +252,101 @@ app.get("/hardcodedlocations", function (req, res) {
             }
 
         ]
-    }]
+    },
+    {
+        "Id": 4,
+        "Lat": 55.706413,
+        "Lon": 12.539542,
+        "Name": "The round tower",
+        "Images": [
+            {
+                "id": 1,
+                "image_title": "the round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"
+            },
+            {
+                "id": 2,
+                "image_title": "The round tower - old",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24811/=36822674.jpg"
+            },
+            {
+                "id": 3,
+                "image_title": "The round tower - night",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24808/=252723.501.jpg"
+            }
+
+        ]
+    }, {
+        "Id": 5,
+        "Lat": 55.706413,
+        "Lon": 12.539542,
+        "Name": "The round tower",
+        "Images": [
+            {
+                "id": 1,
+                "image_title": "the round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"
+            },
+            {
+                "id": 2,
+                "image_title": "The round tower - old",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24811/=36822674.jpg"
+            },
+            {
+                "id": 3,
+                "image_title": "The round tower - night",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24808/=252723.501.jpg"
+            }
+
+        ]
+    }, {
+        "Id": 6,
+        "Lat": 55.706413,
+        "Lon": 12.539542,
+        "Name": "The round tower",
+        "Images": [
+            {
+                "id": 1,
+                "image_title": "the round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"
+            },
+            {
+                "id": 2,
+                "image_title": "The round tower - old",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24811/=36822674.jpg"
+            },
+            {
+                "id": 3,
+                "image_title": "The round tower - night",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24808/=252723.501.jpg"
+            }
+
+        ]
+    }, {
+        "Id": 7,
+        "Lat": 55.706413,
+        "Lon": 12.539542,
+        "Name": "The round tower",
+        "Images": [
+            {
+                "id": 1,
+                "image_title": "the round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"
+            },
+            {
+                "id": 2,
+                "image_title": "The round tower - old",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24811/=36822674.jpg"
+            },
+            {
+                "id": 3,
+                "image_title": "The round tower - night",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24808/=252723.501.jpg"
+            }
+
+        ]
+    },
+    ]
     res.status = "200";
     res.send(data);
 
