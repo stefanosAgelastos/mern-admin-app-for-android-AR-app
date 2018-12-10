@@ -177,7 +177,6 @@ app.post("/dump", function (req, res) {
         });
 });
 
-/* serve hardoced JSON. used for fast unity integration when the database is not up to date */
 app.get("/hardcodedlocations", function (req, res) {
     console.log("HTTP: get hard coded json");
 
