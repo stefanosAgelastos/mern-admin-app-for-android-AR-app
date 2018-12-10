@@ -7,7 +7,7 @@ import { App } from '../App';
 import styles from '../App.css';
 import { intlShape } from 'react-intl';
 import { intl } from '../../../util/react-intl-test-helper';
-import { toggleAddPost } from '../AppActions';
+import { toggleAddLocation } from '../AppActions';
 
 const intlProp = { ...intl, enabledLanguages: ['en', 'fr'] };
 const children = <h1>Test</h1>;
@@ -26,7 +26,7 @@ test('renders properly', t => {
   // t.is(wrapper.find('Helmet').length, 1);
   t.is(wrapper.find('Header').length, 1);
   t.is(wrapper.find('Footer').length, 1);
-  t.is(wrapper.find('Header').prop('toggleAddPost'), wrapper.instance().toggleAddPostSection);
+  t.is(wrapper.find('Header').prop('toggleAddLocation'), wrapper.instance().toggleAddLocationSection);
   t.truthy(wrapper.find('Header + div').hasClass(styles.container));
   t.truthy(wrapper.find('Header + div').children(), children);
 });
@@ -60,12 +60,12 @@ test('calls componentDidMount', t => {
   App.prototype.componentDidMount.restore();
 });
 
-test('calling toggleAddPostSection dispatches toggleAddPost', t => {
+test('calling toggleAddLocationSection dispatches toggleAddLocation', t => {
   const wrapper = shallow(
     <App {...props} />
   );
 
-  wrapper.instance().toggleAddPostSection();
+  wrapper.instance().toggleAddLocationSection();
   t.truthy(dispatch.calledOnce);
-  t.truthy(dispatch.calledWith(toggleAddPost()));
+  t.truthy(dispatch.calledWith(toggleAddLocation()));
 });

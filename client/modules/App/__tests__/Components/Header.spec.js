@@ -13,7 +13,7 @@ test('renders the header properly', t => {
     isActive: sinon.stub().returns(true),
   };
   const wrapper = shallow(
-    <Header switchLanguage={() => {}} intl={intlProp} toggleAddPost={() => {}} />,
+    <Header switchLanguage={() => {}} intl={intlProp} toggleAddLocation={() => {}} />,
     {
       context: {
         router,
@@ -26,12 +26,12 @@ test('renders the header properly', t => {
   t.is(wrapper.find('a').length, 1);
 });
 
-test('doesn\'t add post in pages other than home', t => {
+test('doesn\'t add location in pages other than home', t => {
   const router = {
     isActive: sinon.stub().returns(false),
   };
   const wrapper = shallow(
-    <Header switchLanguage={() => {}} intl={intlProp} toggleAddPost={() => {}} />,
+    <Header switchLanguage={() => {}} intl={intlProp} toggleAddLocation={() => {}} />,
     {
       context: {
         router,
@@ -43,13 +43,13 @@ test('doesn\'t add post in pages other than home', t => {
   t.is(wrapper.find('a').length, 0);
 });
 
-test('toggleAddPost called properly', t => {
+test('toggleAddLocation called properly', t => {
   const router = {
     isActive: sinon.stub().returns(true),
   };
-  const toggleAddPost = sinon.spy();
+  const toggleAddLocation = sinon.spy();
   const wrapper = shallow(
-    <Header switchLanguage={() => {}} intl={intlProp} toggleAddPost={toggleAddPost} />,
+    <Header switchLanguage={() => {}} intl={intlProp} toggleAddLocation={toggleAddLocation} />,
     {
       context: {
         router,
@@ -59,5 +59,5 @@ test('toggleAddPost called properly', t => {
   );
 
   wrapper.find('a').first().simulate('click');
-  t.truthy(toggleAddPost.calledOnce);
+  t.truthy(toggleAddLocation.calledOnce);
 });
