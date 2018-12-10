@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// this module I think is used only by mocha
+// this module I think is used only by mocha 
 
 // ES6 Promises, is set as the mongooses promise object
 mongoose.Promise = global.Promise;
