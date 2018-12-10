@@ -195,65 +195,159 @@ app.get("/hardcodedlocations", function (req, res) {
             },
             {
                 "id": 2,
-                "image_title": "The round tower",
-                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"  
+                "image_title": "Headless",
+                "image_url": "https://hazlitt.net/sites/default/files/styles/article-header-image/public/field/image/mermaid.jpg?itok=8SN_VACD"
             },
             {
                 "id": 3,
-                "image_title": "Chritiania",
-                "image_url": "http://sermitsiaq.ag/files/styles/930x500/public/media/christiania.jpg?itok=OM19TO4X"  
+                "image_title": "hc Andersen",
+                "image_url": "http://visithcandersen.dk/julen-2010/hcandersen-odense.jpg"
             }
-            
+
         ]
     },
     {
         "Id": 2,
         "Lat": 55.706413,
         "Lon": 12.539542,
-        "Name": "Work 2",
+        "Name": "The round tower",
         "Images": [
             {
                 "id": 1,
-                "image_title": "The little mermaid",
-                "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Copenhagen_-_the_little_mermaid_statue_-_2013.jpg/800px-Copenhagen_-_the_little_mermaid_statue_-_2013.jpg"
+                "image_title": "the round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"
             },
             {
                 "id": 2,
-                "image_title": "The round tower",
-                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"  
+                "image_title": "The round tower - old",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24811/=36822674.jpg"
             },
             {
                 "id": 3,
-                "image_title": "Chritiania",
-                "image_url": "http://sermitsiaq.ag/files/styles/930x500/public/media/christiania.jpg?itok=OM19TO4X"  
+                "image_title": "The round tower - night",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24808/=252723.501.jpg"
             }
-            
+
         ]
     },
     {
         "Id": 3,
         "Lat": 55.706413,
-        "Lon": 12.539542,
-        "Name": "Work 3",
+        "Lon": 12.519542,
+        "Name": "Christiania",
         "Images": [
             {
                 "id": 1,
-                "image_title": "The little mermaid",
-                "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Copenhagen_-_the_little_mermaid_statue_-_2013.jpg/800px-Copenhagen_-_the_little_mermaid_statue_-_2013.jpg"
+                "image_title": "Chritiania",
+                "image_url": "http://sermitsiaq.ag/files/styles/930x500/public/media/christiania.jpg?itok=OM19TO4X"
             },
             {
                 "id": 2,
-                "image_title": "The round tower",
-                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"  
+                "image_title": "Police",
+                "image_url": "https://static01.nyt.com/images/2018/08/26/world/26Freetown1/merlin_141931104_98147bfa-d0e0-4d95-83ea-0aa9a4deab5e-superJumbo.jpg?quality=90&auto=webp"
             },
             {
                 "id": 3,
-                "image_title": "Chritiania",
-                "image_url": "http://sermitsiaq.ag/files/styles/930x500/public/media/christiania.jpg?itok=OM19TO4X"  
+                "image_title": "Chritiania - colourfull",
+                "image_url": "https://farm9.static.flickr.com/8416/30153305035_725e999748_b.jpg"
             }
-            
+
         ]
-    }]
+    },
+    {
+        "Id": 4,
+        "Lat": 55.706413,
+        "Lon": 12.539542,
+        "Name": "The round tower",
+        "Images": [
+            {
+                "id": 1,
+                "image_title": "the round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"
+            },
+            {
+                "id": 2,
+                "image_title": "The round tower - old",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24811/=36822674.jpg"
+            },
+            {
+                "id": 3,
+                "image_title": "The round tower - night",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24808/=252723.501.jpg"
+            }
+
+        ]
+    }, {
+        "Id": 5,
+        "Lat": 55.706413,
+        "Lon": 12.539542,
+        "Name": "The round tower",
+        "Images": [
+            {
+                "id": 1,
+                "image_title": "the round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"
+            },
+            {
+                "id": 2,
+                "image_title": "The round tower - old",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24811/=36822674.jpg"
+            },
+            {
+                "id": 3,
+                "image_title": "The round tower - night",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24808/=252723.501.jpg"
+            }
+
+        ]
+    }, {
+        "Id": 6,
+        "Lat": 55.706413,
+        "Lon": 12.539542,
+        "Name": "The round tower",
+        "Images": [
+            {
+                "id": 1,
+                "image_title": "the round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"
+            },
+            {
+                "id": 2,
+                "image_title": "The round tower - old",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24811/=36822674.jpg"
+            },
+            {
+                "id": 3,
+                "image_title": "The round tower - night",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24808/=252723.501.jpg"
+            }
+
+        ]
+    }, {
+        "Id": 7,
+        "Lat": 55.706413,
+        "Lon": 12.539542,
+        "Name": "The round tower",
+        "Images": [
+            {
+                "id": 1,
+                "image_title": "the round tower",
+                "image_url": "https://files.guidedanmark.org/files/382/304_Rundetaarn.jpg?qfix"
+            },
+            {
+                "id": 2,
+                "image_title": "The round tower - old",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24811/=36822674.jpg"
+            },
+            {
+                "id": 3,
+                "image_title": "The round tower - night",
+                "image_url": "http://denstoredanske.dk/@api/deki/files/24808/=252723.501.jpg"
+            }
+
+        ]
+    },
+    ]
     res.status = "200";
     res.send(data);
 
