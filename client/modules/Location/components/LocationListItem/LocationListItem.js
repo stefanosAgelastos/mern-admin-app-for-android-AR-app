@@ -14,8 +14,8 @@ function LocationListItem(props) {
           {props.location.title}
         </Link>
       </h3>
-      <p className={styles['author-name']}><FormattedMessage id="by" /> {props.location.name}</p>
-      <p className={styles['location-desc']}>{props.location.content}</p>
+      <p className={styles['author-name']}><FormattedMessage id="by" /> {props.location.author}</p>
+      <p className={styles['location-desc']}>{props.location.images[0].image_title}</p>
       <p className={styles['location-action']}><a href="#" onClick={props.onDelete}><FormattedMessage id="deleteLocation" /></a></p>
       <hr className={styles.divider} />
     </div>
@@ -24,13 +24,21 @@ function LocationListItem(props) {
 
 LocationListItem.propTypes = {
   location: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    content: PropTypes.object,
+    lat: PropTypes.number.isRequired,
+    lon: PropTypes.number.isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        image_title: PropTypes.string.isRequired,
+        image_url: PropTypes.string.isRequired,
+      })
+    ),
     slug: PropTypes.string.isRequired,
     cuid: PropTypes.string.isRequired,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
 };
-/* ^^^maybe i could put here the shape of content */
+
 export default LocationListItem;

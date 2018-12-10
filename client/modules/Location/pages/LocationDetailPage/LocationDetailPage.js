@@ -19,9 +19,8 @@ export function LocationDetailPage(props) {
       <Helmet title={props.location.title} />
       <div className={`${styles['single-location']} ${styles['location-detail']}`}>
         <h3 className={styles['location-title']}>{props.location.title}</h3>
-        <p className={styles['author-name']}><FormattedMessage id="by" /> {props.location.name}</p>
-        <p className={styles['location-desc']}>{props.location.content}</p>
-        /* not sure about this   ^^^^^ maybe i should leave this as post*/
+        <p className={styles['author-name']}><FormattedMessage id="by" /> {props.location.author}</p>
+        <p className={styles['location-desc']}>{props.location.images[0].image_title}</p>
       </div>
     </div>
   );
@@ -41,12 +40,20 @@ function mapStateToProps(state, props) {
 
 LocationDetailPage.propTypes = {
   location: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    content: PropTypes.object,
+    lat: PropTypes.number.isRequired,
+    lon: PropTypes.number.isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        image_title: PropTypes.string.isRequired,
+        image_url: PropTypes.string.isRequired,
+      })
+    ),
     slug: PropTypes.string.isRequired,
     cuid: PropTypes.string.isRequired,
   }).isRequired,
 };
-/* ^^^maybe i could put here the shape of content */
+
 export default connect(mapStateToProps)(LocationDetailPage);

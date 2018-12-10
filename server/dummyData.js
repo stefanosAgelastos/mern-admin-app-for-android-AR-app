@@ -2,7 +2,7 @@ import Location from './models/location';
 
 export default function () {
   Location.count().exec((err, count) => {
-    if (count > 0) {
+    if (count > 2) {
       return;
     }
 
@@ -21,7 +21,7 @@ export default function () {
         id: 3,
         image_title: 'Chritiania',
         image_url: 'http://sermitsiaq.ag/files/styles/930x500/public/media/christiania.jpg?itok=OM19TO4X',
-      }
+      },
     ];
 
     const content2 = [
@@ -39,11 +39,11 @@ export default function () {
         id: 3,
         image_title: 'Chritiania',
         image_url: 'http://sermitsiaq.ag/files/styles/930x500/public/media/christiania.jpg?itok=OM19TO4X',
-      }
+      },
     ];
 
-    const location1 = new Location({ name: 'Me', title: 'Hello MERN', slug: 'hello-mern', cuid: 'cikqgkv4q01ck7453ualdn3hd', content: content1 });
-    const location2 = new Location({ name: 'Mini me', title: 'Lorem Ipsum', slug: 'lorem-ipsum', cuid: 'cikqgkv4q01ck7453ualdn3hf', content: content2 });
+    const location1 = new Location({ author: 'Me', title: 'Hello CPH', lon: 12.5990655, lat: 55.6928992, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hd', images: content1 });
+    const location2 = new Location({ name: 'Mini me', title: 'Lorem Ipsum', lon: 12.539542, lat: 55.706413, slug: 'lorem-ipsum', cuid: 'cikqgkv4q01ck7453ualdn3hf', images: content2 });
 
     Location.create([location1, location2], (error) => {
       if (!error) {

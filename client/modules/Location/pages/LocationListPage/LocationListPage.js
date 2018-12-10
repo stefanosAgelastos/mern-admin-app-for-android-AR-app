@@ -53,9 +53,17 @@ function mapStateToProps(state) {
 
 LocationListPage.propTypes = {
   locations: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    content: PropTypes.object,
+    lat: PropTypes.number.isRequired,
+    lon: PropTypes.number.isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        image_title: PropTypes.string.isRequired,
+        image_url: PropTypes.string.isRequired,
+      })
+    ),
   })).isRequired,
   showAddLocation: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,

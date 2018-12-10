@@ -28,13 +28,18 @@ function LocationList(props) {
 
 LocationList.propTypes = {
   locations: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    content: PropTypes.object,
-    /* this can be helpful ^^ here
-    https://labnotes.panderalabs.com/shaping-up-your-react-components-with-proptypes-shape-and-selectors-9d1111d0566f */
+    lat: PropTypes.number.isRequired,
+    lon: PropTypes.number.isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        image_title: PropTypes.string.isRequired,
+        image_url: PropTypes.string.isRequired,
+      })
+    ),
     slug: PropTypes.string.isRequired,
-    /* ^^ remove */
     cuid: PropTypes.string.isRequired,
   })).isRequired,
   handleDeleteLocation: PropTypes.func.isRequired,

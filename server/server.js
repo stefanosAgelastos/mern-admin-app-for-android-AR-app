@@ -157,7 +157,7 @@ app.use((req, res, next) => {
 // start app
 app.listen(serverConfig.port, (error) => {
   if (!error) {
-    console.log(`MERN app is running on port: ${serverConfig.port}! Build some amazing AR conent!`); // eslint-disable-line
+    console.log(`MERN app is running on port: ${serverConfig.port}! Build some amazing AR content!`); // eslint-disable-line
   }
 });
 
