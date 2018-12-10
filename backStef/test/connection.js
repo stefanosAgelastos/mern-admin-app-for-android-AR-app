@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
+<<<<<<< HEAD
 // this module I think is used only by mocha 
+=======
+// this module I think is used only by mocha
+>>>>>>> ed0a9b1... tests for mongo db. just reasearching at the moment
 
 // ES6 Promises, is set as the mongooses promise object
 mongoose.Promise = global.Promise;
