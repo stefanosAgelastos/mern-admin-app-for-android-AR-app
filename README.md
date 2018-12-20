@@ -1,4 +1,4 @@
-### KEA 5. semester Final Project. By Alexander Kellberg, Kristian Skovlund Rasmussen, Stefanos Agelastos
+### KEA 5. semester Final Project. By Alexander Kellberg, Kristian Skovlund Rasmussen & Stefanos Agelastos
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
