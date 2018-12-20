@@ -1,38 +1,15 @@
 ![](http://res.cloudinary.com/hashnode/image/upload/w_200/v1466495663/static_imgs/mern/v2/mernio-logo.png)
 
-# mern-starter
-![title](https://travis-ci.org/Hashnode/mern-starter.svg?branch=v2.0.0)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Discuss on Hashnode](
-https://hashnode.github.io/badges/mern.svg)](https://hashnode.com/n/mern)
+### KEA 5. semester Final Project. By Alexander Kellberg, Kristian Skovlund Rasmussen, Stefanos Agelastos
 
+# gps-tourist-app
 
-MERN is a scaffolding tool which makes it easy to build isomorphic apps using Mongo, Express, React and NodeJS. It minimises the setup time and gets you up to speed using proven technologies.
-
+Based on MERN, a scaffolding tool which makes it easy to build isomorphic apps using Mongo, Express, React and NodeJS.
 - [Website](http://mern.io)
 - [Documentation](http://mern.io/documentation.html)
 - [Discussions](https://hashnode.com/n/mern)
 
-## Road to V3!
-We're on our way towards V3, which will bring a few updates to MERN! We are tracking with the following milestones:
-
-- V2.4.0 -> Webpack 3 and many fixes *Completed* : [list of changes](Changes.md)
-- V2.5.0 -> React V16.x upgrade and propTypes fix
-- V2.6.0 -> React Router V4
-- V2.7.0 -> Webpack upgrade to V4
-- V2.8.0 -> database/mongo/mongoose updates/fixes
-- V2.9.0 -> Express/Server dependencies/code upgrade
-- V3.0.0 -> CLI/devtools optimization (docker, etc.)
-
 ## Quickstart
-
-```sh
-  npm install -g mern-cli
-  mern init your_new_app
-  cd your_new_app
-  npm install
-  npm start
-```
 
 **Note : Please make sure your MongoDB is running.** For MongoDB installation guide see [this](https://docs.mongodb.org/v3.0/installation/). Also `npm6` is required to install dependencies properly.
 
