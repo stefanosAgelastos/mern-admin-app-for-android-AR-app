@@ -168,11 +168,14 @@ export default function () {
       },
     ];
 
-    const location1 = new Location({ author: 'Me', title: 'Little Mermaid', lon: 12.599297, lat: 55.692897, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hd', images: content1 });
+    const location1 = new Location({ author: 'Me', title: 'Little Mermaid', lon: 12.599297, lat: 55.692897, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hd' });
+    location1.images = content1;
     const location2 = new Location({ author: 'Me', title: 'KEA', lon: 12.537503, lat: 55.704006, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hf', images: content2 });
     const location3 = new Location({ author: 'Me', title: 'Christiania', lon: 12.600034, lat: 55.673444, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hh', images: content3 });
-    const location4 = new Location({ author: 'Me', title: 'Amalienborg Palace', lon: 12.593052, lat: 55.684095, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hk', images: content4 });
-    const location5 = new Location({ author: 'Me', title: 'National museum', lon: 12.574741, lat: 55.674678, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hm', images: content5 });
+    const location4 = new Location({ author: 'Me', title: 'Amalienborg Palace', lon: 12.593052, lat: 55.684095, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hk' });
+    location4.images = content4;
+    const location5 = new Location({ author: 'Me', title: 'National museum', lon: 12.574741, lat: 55.674678, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hm' });
+    location5.images = content5;
     const location6 = new Location({ author: 'Me', title: 'Round Tower', lon: 12.575751, lat: 55.681413, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3ho', images: content6 });
     const location7 = new Location({ author: 'Me', title: 'Zoo', lon: 12.521390, lat: 55.672585, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hq', images: content7 });
     const location8 = new Location({ author: 'Me', title: 'Tivoli', lon: 12.568136, lat: 55.673690, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hs', images: content8 });

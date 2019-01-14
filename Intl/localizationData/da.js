@@ -1,5 +1,5 @@
 export default {
-  locale: 'fr',
+  locale: 'da',
   messages: {
     siteTitle: 'MERN blog de démarrage',
     addLocation: 'Ajouter Poster',

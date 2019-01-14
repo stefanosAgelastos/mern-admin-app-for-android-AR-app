@@ -48,6 +48,7 @@ import { fetchComponentData } from './util/fetchData';
 import locations from './routes/location.routes';
 import dummyData from './dummyData';
 import serverConfig from './config';
+// import { getDataBaseURLonLocal } from './util/dbUriHelper';
 
 // Set native promises as mongoose promise
 mongoose.Promise = global.Promise;

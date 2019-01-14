@@ -15,7 +15,7 @@ const location = { name: 'Prashant', title: 'Hello Mern', cuid: 'f34gb2bh24b24b2
 test('should return the correct type for addLocation', actionTest(
   addLocation,
   location,
-  { type: ADD_LOCATION, LOCATION },
+  { type: ADD_LOCATION, location },
 ));
 
 test('should return the correct type for deleteLocation', actionTest(
