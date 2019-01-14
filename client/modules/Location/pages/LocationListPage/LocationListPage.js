@@ -64,6 +64,7 @@ LocationListPage.propTypes = {
         image_url: PropTypes.string.isRequired,
       })
     ),
+    dateAdded: PropTypes.string.isRequired,
   })).isRequired,
   showAddLocation: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,
