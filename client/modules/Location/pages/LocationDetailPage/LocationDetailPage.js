@@ -19,9 +19,10 @@ export function LocationDetailPage(props) {
       <Helmet title={props.location.title} />
       <div className={`${styles['single-location']} ${styles['location-detail']}`}>
         <h3 className={styles['location-title']}>{props.location.title}</h3>
-        <p className={styles['author-name']}><FormattedMessage id="Latitude: "/> {props.location.lat} </p>
-      <p className={styles['author-name']}><FormattedMessage id="Longitude: "/> {props.location.lon}</p>
-
+        <p className={styles['author-name']}><FormattedMessage id="latitude" /> {props.location.lat} </p>
+        <p className={styles['author-name']}><FormattedMessage id="longitude" /> {props.location.lon}</p>
+        <p className={styles['author-name']}><FormattedMessage id="by" /> {props.location.author} </p>
+        <p className={styles['author-name']}>Date added: {props.location.dateAdded}  </p>
         <table>
           <tr>
             <td><img className={styles['image-style']} src={props.location.images[0].image_url}></img></td>
@@ -34,10 +35,6 @@ export function LocationDetailPage(props) {
             <td><p className={styles['location-desc']}>{props.location.images[2].image_title}</p></td>
           </tr>
         </table>
-
-        <p className={styles['author-name']}><FormattedMessage id="by" /> {props.location.author} </p>
-        <p className={styles['author-name']}>Date added: {props.location.dateAdded}  </p>
-        
       </div>
     </div>
   );

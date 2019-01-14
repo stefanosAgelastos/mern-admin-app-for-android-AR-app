@@ -1,7 +1,7 @@
 export default {
   locale: 'en',
   messages: {
-    siteTitle: 'MERN Starter Blog',
+    siteTitle: 'AR tourist guide - Admin panel',
     addLocation: 'Add Location',
     switchLanguage: 'Switch Language',
     twitterMessage: 'We are on Twitter',
@@ -12,6 +12,8 @@ export default {
     locationTitle: 'Location Title',
     locationContent: 'Location Content',
     submit: 'Submit',
+    latitude: 'Latitude',
+    longitude: 'Longitud',
     comment: `user {name} {value, plural,
     	  =0 {does not have any comments}
     	  =1 {has # comment}
