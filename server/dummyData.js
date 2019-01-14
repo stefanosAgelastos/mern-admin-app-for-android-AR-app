@@ -180,7 +180,7 @@ export default function () {
 
     Location.create([location1, location2, location3, location4, location5, location6, location7, location8, location9], (error) => {
       if (!error) {
-        // console.log('ready to go....');
+        // console.log('ready to goo....');
       }
     });
   });
