@@ -26,6 +26,7 @@
   font-size: 14px;
   color: #888;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .location-action a{
@@ -55,4 +56,10 @@
 .location-detail .location-desc{
   font-size: 16px;
   color: #555;
+}
+
+.image-style{
+  height:200px;
+  width:200px;
+  margin-left:6px;
 }

@@ -14,9 +14,16 @@ function LocationListItem(props) {
           {props.location.title}
         </Link>
       </h3>
-      <p className={styles['author-name']}><FormattedMessage id="by" /> {props.location.author}</p>
-      <p className={styles['location-desc']}>{props.location.images[0].image_title}</p>
-      <p className={styles['location-action']}><a href="#" onClick={props.onDelete}><FormattedMessage id="deleteLocation" /></a></p>
+      {/* <p className={styles['author-name']}><FormattedMessage id="by" /> {props.location.author}</p> */}
+      {/* <p className={styles['author-name']}><FormattedMessage id="Latitude: "/> {props.location.lat} <FormattedMessage id="Longitude: "/> {props.location.lon}</p> */}
+      
+      <p className={styles['author-name']}><FormattedMessage id="Latitude: "/> {props.location.lat} </p>
+      <p className={styles['author-name']}><FormattedMessage id="Longitude: "/> {props.location.lon}</p>
+      {/* <p className={styles['location-desc']}>{props.location.images[0].image_title}</p>  */}
+      <img className={styles['image-style']} src={props.location.images[0].image_url}></img>
+      <img className={styles['image-style']} src={props.location.images[1].image_url}></img>
+      <img className={styles['image-style']} src={props.location.images[2].image_url}></img>
+      <p className={styles['location-action']}><a href="/" onClick={props.onDelete}><FormattedMessage id="deleteLocation" /></a></p>
       <hr className={styles.divider} />
     </div>
   );
