@@ -20,7 +20,19 @@ export function LocationDetailPage(props) {
       <div className={`${styles['single-location']} ${styles['location-detail']}`}>
         <h3 className={styles['location-title']}>{props.location.title}</h3>
         <p className={styles['author-name']}><FormattedMessage id="by" /> {props.location.author}</p>
-        <p className={styles['location-desc']}>{props.location.images[0].image_title}</p>
+        <table>
+          <tr>
+            <td><img className={styles['image-style']} src={props.location.images[0].image_url}></img></td>
+            <td><img className={styles['image-style']} src={props.location.images[1].image_url}></img></td>
+            <td><img className={styles['image-style']} src={props.location.images[2].image_url}></img></td>
+          </tr>
+          <tr>
+            <td><p className={styles['location-desc']}>{props.location.images[0].image_title}</p></td>
+            <td><p className={styles['location-desc']}>{props.location.images[1].image_title}</p></td>
+            <td><p className={styles['location-desc']}>{props.location.images[2].image_title}</p></td>
+          </tr>
+        </table>
+        
       </div>
     </div>
   );
