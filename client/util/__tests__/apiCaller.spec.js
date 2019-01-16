@@ -16,7 +16,7 @@ test('sends the body', t => {
   const body = { id: 5 };
   const reply = { foo: 'bar' };
   nock(API_URL)
-    .location('/foo', body)
+    .post('/foo', body)
     .reply(200, reply);
   return callApi('foo', 'post', body).then(response => {
     t.deepEqual(response, reply);

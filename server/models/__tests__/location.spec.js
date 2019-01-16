@@ -4,10 +4,11 @@ import app from '../../server';
 import Location from '../location';
 import { connectDB, dropDB } from '../../util/test-helpers';
 
+
 // Initial posts added into test db
 const locations = [
-  new Location({ name: 'Prashant', title: 'Hello Mern', slug: 'hello-mern', cuid: 'f34gb2bh24b24b2', content: "All cats meow 'mern!'" }),
-  new Location({ name: 'Mayank', title: 'Hi Mern', slug: 'hi-mern', cuid: 'f34gb2bh24b24b3', content: "All dogs bark 'mern!'" }),
+  new Location({ author: 'Me', title: 'KEA', lon: 12.537503, lat: 55.704006, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hf', images: {} }),
+  new Location({ author: 'Me', title: 'Christiania', lon: 12.600034, lat: 55.673444, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hh', images: {} })
 ];
 
 test.before('connect to mockgoose', async () => {
@@ -36,7 +37,7 @@ test.serial('Should correctly give number of Locations', async t => {
 test.serial('Should send correct data when queried against a cuid', async t => {
   t.plan(2);
 
-  const location = new Location({ name: 'Foo', title: 'bar', slug: 'bar', cuid: 'f34gb2bh24b24b2', content: 'Hello Mern says Foo' });
+  const location =  new Location({ author: 'Me', title: 'KEA', lon: 12.537503, lat: 55.704006, slug: 'hello-cph', cuid: 'f34gb2bh24b24b2', images: {} });
   location.save();
 
   const res = await request(app)
@@ -52,19 +53,19 @@ test.serial('Should correctly add a location', async t => {
 
   const res = await request(app)
     .post('/api/locations')
-    .send({ location: { name: 'Foo', title: 'bar', content: 'Hello Mern says Foo' } })
+    .send({ location: { author: 'Me', title: 'KEA', lon: 12.537503, lat: 55.704006, slug: 'hello-cph', images: {} } })
     .set('Accept', 'application/json');
 
   t.is(res.status, 200);
 
-  const savedLocation = await Location.findOne({ title: 'bar' }).exec();
-  t.is(savedLocation.name, 'Foo');
+  const savedLocation = await Location.findOne({ title: 'KEA' }).exec();
+  t.is(savedLocation.author, 'Me');
 });
 
 test.serial('Should correctly delete a location', async t => {
   t.plan(2);
 
-  const location = new Location({ name: 'Foo', title: 'bar', slug: 'bar', cuid: 'f34gb2bh24b24b2', content: 'Hello Mern says Foo' });
+  const location = new Location({ author: 'Me', title: 'KEA', lon: 12.537503, lat: 55.704006, slug: 'hello-cph', cuid: 'f34gb2bh24b24b2', images: {} });
   location.save();
 
   const res = await request(app)

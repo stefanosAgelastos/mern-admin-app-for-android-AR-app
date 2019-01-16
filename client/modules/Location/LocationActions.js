@@ -14,8 +14,9 @@ export function addLocation(location) {
 }
 
 export function addLocationRequest(location) {
+
   return (dispatch) => {
-    return callApi('locations', 'location', {
+    return callApi('locations', 'post', {
       location: {
         name: location.name,
         title: location.title,

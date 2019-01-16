@@ -25,7 +25,7 @@ export function getLocations(req, res) {
  * @returns void
  */
 export function addLocation(req, res) {
-  if (!req.body.Location.name || !req.body.location.title || !req.body.location.content) {
+  if (!req.body.location.author || !req.body.location.title) {
     res.status(403).end();
   }
 
@@ -42,8 +42,9 @@ export function addLocation(req, res) {
   newLocation.save((err, saved) => {
     if (err) {
       res.status(500).send(err);
+    } else {
+      res.json({ location: saved });
     }
-    res.json({ location: saved });
   });
 }
 
