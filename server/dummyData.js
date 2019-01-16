@@ -28,7 +28,7 @@ export default function () {
       {
         id: 1,
         image_title: 'Lygten 16',
-        image_url: 'https://i.imgur.com/0aJ6mor.jpg',
+        image_url: 'https://i.imgur.com/EtzhItu.jpg',
       },
       {
         id: 2,
