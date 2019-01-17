@@ -14,13 +14,18 @@ export function addLocation(location) {
 }
 
 export function addLocationRequest(location) {
-
   return (dispatch) => {
     return callApi('locations', 'post', {
       location: {
-        name: location.name,
+        author: location.author,
         title: location.title,
-        content: location.content,
+        lon: location.lon,
+        lat: location.lat,
+        images: [
+          { id: 1, image_title: location.imgT1, image_url: location.imgU1 },
+          { id: 2, image_title: location.imgT2, image_url: location.imgU2 },
+          { id: 3, image_title: location.imgT3, image_url: location.imgU3 },
+        ],
       },
     }).then(res => dispatch(addLocation(res.location)));
     /* things to look up ^^^, what is dispatch */

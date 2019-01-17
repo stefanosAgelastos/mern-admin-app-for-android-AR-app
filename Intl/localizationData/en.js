@@ -8,12 +8,17 @@ export default {
     by: 'By',
     deleteLocation: 'Delete Location',
     createNewLocation: 'Create new location',
+    firstImage: 'First image',
+    secondImage: 'Second image',
+    thirdImage: 'Third image',
     authorName: 'Author\'s Name',
     locationTitle: 'Location Title',
     locationContent: 'Location Content',
     submit: 'Submit',
     latitude: 'Latitude',
     longitude: 'Longitud',
+    imageTitle: 'Image title',
+    imageUrl: 'Image url',
     comment: `user {name} {value, plural,
     	  =0 {does not have any comments}
     	  =1 {has # comment}

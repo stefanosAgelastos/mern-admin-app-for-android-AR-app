@@ -8,12 +8,17 @@ export default {
     by: 'Af',
     deleteLocation: 'Slet lokation',
     createNewLocation: 'Tilføj ny lokation',
+    firstImage: 'Billede et',
+    secondImage: 'Billede to',
+    thirdImage: 'Billede tre',
     authorName: 'Brugernavn',
     locationTitle: 'Lokations navn',
     locationContent: 'Contenu après',
     submit: 'Tilføj',
     latitude: 'Breddergrad',
     longitude: 'Længdegrad',
+    imageTitle: 'Billed titel',
+    imageUrl: 'Billed url',
     comment: `user {name} {value, plural,
     	  =0 {does not have any comments}
     	  =1 {has # comment}

@@ -25,6 +25,10 @@ export function getLocations(req, res) {
  * @returns void
  */
 export function addLocation(req, res) {
+
+  // eslint-disable-next-line no-console
+  console.log('equest received on addLocation:', req);
+
   if (!req.body.location.author || !req.body.location.title) {
     res.status(403).end();
   }

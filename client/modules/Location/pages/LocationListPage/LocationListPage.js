@@ -25,9 +25,9 @@ class LocationListPage extends Component {
     }
   };
 
-  handleAddLocation = (name, title, content) => {
+  handleAddLocation = (author, title, lon, lat, imgT1, imgU1, imgT2, imgU2, imgT3, imgU3) => {
     this.props.dispatch(toggleAddLocation());
-    this.props.dispatch(addLocationRequest({ name, title, content }));
+    this.props.dispatch(addLocationRequest({ author, title, lon, lat, imgT1, imgU1, imgT2, imgU2, imgT3, imgU3 }));
   };
 
   render() {
@@ -40,7 +40,7 @@ class LocationListPage extends Component {
   }
 }
 
-// Actions required to provide data for this component to render in sever side.
+// Actions required to provide data for this component to render in server side.
 LocationListPage.need = [() => { return fetchLocations(); }];
 
 // Retrieve data from store as props
