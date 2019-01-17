@@ -8,7 +8,7 @@ import { connectDB, dropDB } from '../../util/test-helpers';
 // Initial posts added into test db
 const locations = [
   new Location({ author: 'Me', title: 'KEA', lon: 12.537503, lat: 55.704006, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hf', images: {} }),
-  new Location({ author: 'Me', title: 'Christiania', lon: 12.600034, lat: 55.673444, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hh', images: {} })
+  new Location({ author: 'Me', title: 'Christiania', lon: 12.600034, lat: 55.673444, slug: 'hello-cph', cuid: 'cikqgkv4q01ck7453ualdn3hh', images: {} }),
 ];
 
 test.before('connect to mockgoose', async () => {
@@ -37,7 +37,7 @@ test.serial('Should correctly give number of Locations', async t => {
 test.serial('Should send correct data when queried against a cuid', async t => {
   t.plan(2);
 
-  const location =  new Location({ author: 'Me', title: 'KEA', lon: 12.537503, lat: 55.704006, slug: 'hello-cph', cuid: 'f34gb2bh24b24b2', images: {} });
+  const location = new Location({ author: 'Me', title: 'KEA', lon: 12.537503, lat: 55.704006, slug: 'hello-cph', cuid: 'f34gb2bh24b24b2', images: {} });
   location.save();
 
   const res = await request(app)

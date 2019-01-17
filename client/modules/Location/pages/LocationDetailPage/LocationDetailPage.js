@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-has-alt */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -22,7 +23,7 @@ export function LocationDetailPage(props) {
         <p className={styles['author-name']}><FormattedMessage id="latitude" /> {props.location.lat} </p>
         <p className={styles['author-name']}><FormattedMessage id="longitude" /> {props.location.lon}</p>
         <p className={styles['author-name']}><FormattedMessage id="by" /> {props.location.author} </p>
-        <p className={styles['author-name']}>Date added: {props.location.dateAdded}  </p>
+        <p className={styles['author-name']}>Date added: {props.location.dateAdded} </p>
         <table>
           <tr>
             <td><img className={styles['image-style']} src={props.location.images[0].image_url}></img></td>

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-has-alt */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
@@ -16,7 +17,6 @@ function LocationListItem(props) {
       </h3>
       {/* <p className={styles['author-name']}><FormattedMessage id="by" /> {props.location.author}</p> */}
       {/* <p className={styles['author-name']}><FormattedMessage id="Latitude: "/> {props.location.lat} <FormattedMessage id="Longitude: "/> {props.location.lon}</p> */}
-      
       <p className={styles['author-name']}><FormattedMessage id="latitude" /> {props.location.lat} </p>
       <p className={styles['author-name']}><FormattedMessage id="longitude" /> {props.location.lon}</p>
       {/* <p className={styles['location-desc']}>{props.location.images[0].image_title}</p>  */}

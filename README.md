@@ -1,4 +1,3 @@
-![](http://res.cloudinary.com/hashnode/image/upload/w_200/v1466495663/static_imgs/mern/v2/mernio-logo.png)
 
 ### KEA 5. semester Final Project. By Alexander Kellberg, Kristian Skovlund Rasmussen, Stefanos Agelastos
 
