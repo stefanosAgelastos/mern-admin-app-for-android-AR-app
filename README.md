@@ -6,15 +6,18 @@
 ## Initial concept
 As an internship project, I worked in a multidisciplinary team of 2 multimedia designers and 2 developers. We developed an AR solution for this local guided-tours company.
 Our goal was to "Bring Stories Alive" as well as to add a competitive advantage to the company's SoMe presence.
-[![Watch the video](https://raw.githubusercontent.com/stefanosAgelastos/gps-tourist-app/master/docs/youtube.png)](https://youtu.be/Lbq94Ef9qJY?t=5)
+[![Watch the video](https://raw.githubusercontent.com/stefanosAgelastos/gps-tourist-app/master/docs/youtube.png)](https://youtu.be/Lbq94Ef9qJY?t=5).
+
 ## First working prototype
 Together with two colleagues we developed an augmented reality android tourist guide and a supporting administration system. 
 The user harvests GPS and AR technologies through their phone and consumes content relevant to their location. 
 The system administrator can add new locations and feed the application with new content.
 ![overview](https://raw.githubusercontent.com/stefanosAgelastos/gps-tourist-app/master/docs/overview.png)
+
 ### About the process
 We combined Scrum and Design thinking. Both methodologies are iterative and incremental by nature, so they combine well:
 ![overview](https://raw.githubusercontent.com/stefanosAgelastos/gps-tourist-app/master/docs/process.png)
+
 ## Built With
 The admin webapp is based on [MERN](http://mern.io), a scaffolding tool which makes it easy to build isomorphic apps using Mongo, Express, React and NodeJS. Read the [Documentation](http://mern.io/documentation.html).
 The android app was made on the [Unity](https://unity.com/) real-time 3d development platform and [Vuforia](https://www.vuforia.com/) library, which provided web, gps and augmented reality capabilitities.
