@@ -7,16 +7,23 @@
 As an internship project, I worked in a multidisciplinary team of 2 multimedia designers and 2 developers. We developed an AR solution for this local guided-tours company.
 Our goal was to "Bring Stories Alive" as well as to add a competitive advantage to the company's SoMe presence. 
  
+### About the Process
+We went through a 4-day course on Unity 3D and 1 day on Ideation. We worked with Scrum. An experienced tutor guided us while practising design methods from the [Amsterdam MediaLab's Toolkit](https://toolkits.dss.cloud/design/).   
+We researched about the target group of the company, and through ideation tecniques we developed a series of prototypes. 
+After iterative user testing we ended up with a working AR mobile application that we pitched to the client during an open event. 
+Recomendation letter available.
 [![Watch the video](https://raw.githubusercontent.com/stefanosAgelastos/gps-tourist-app/master/docs/youtube.png)](https://youtu.be/Lbq94Ef9qJY?t=5).
   
 ### First working prototype:
 Together with two colleagues we developed an augmented reality android tourist guide and a supporting administration system. 
 The user harvests GPS and AR technologies through their phone and consumes content relevant to their location. 
-The system administrator can add new locations and feed the application with new content.
+The system administrator can add new locations and feed the application with new content.  
+  
 ![overview](https://raw.githubusercontent.com/stefanosAgelastos/gps-tourist-app/master/docs/overview.png) 
   
 ### About the process:
-We combined Scrum and Design thinking. Both methodologies are iterative and incremental by nature, so they combine well:
+We combined Scrum and Design thinking. Both methodologies are iterative and incremental by nature, so they combine well:  
+  
 ![overview](https://raw.githubusercontent.com/stefanosAgelastos/gps-tourist-app/master/docs/process.png) 
   
 ## Built With
@@ -31,7 +38,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
 **Note : Please make sure your MongoDB is running.** For MongoDB installation guide see [this](https://docs.mongodb.org/v3.0/installation/). Also `npm6` is required to install dependencies properly.
 
 ## Available Commands
