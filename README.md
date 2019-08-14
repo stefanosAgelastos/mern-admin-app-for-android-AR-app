@@ -1,20 +1,24 @@
 # AR tourist guide
-### KEA 5. semester Final Project. By Alexander Kellberg, Kristian Skovlund Rasmussen, Stefanos Agelastos.
-### Exam evaluation: excellent
-
+### [Go to github repo](https://github.com/stefanosAgelastos/gps-tourist-app) or ~~[Open app](https://ar.stefworks.ml)~~
+  
 ## About the project
-### Initial concept:
-As an internship project, I worked in a multidisciplinary team of 2 multimedia designers and 2 developers. We developed an AR solution for this local guided-tours company.
+This is a concept product, purposed to assist tour guides with Augmented Reality.
+The system was developed in two phases. It started in October 2019 as an internship project for [KøbenhavnerTure](https://www.koebenhavnerture.dk/), and in a second phase (November-December 2019) it was further developed as a final exam project for [KEA's Datamatiker AP](https://kea.dk/en/programmes/academy-profession-degree/computer-science). 
+  
+### V1.0: Initial concept:
+In a multidisciplinary team of 2 multimedia designers and 2 developers. We developed an AR solution for this local guided-tours company.
 Our goal was to "Bring Stories Alive" as well as to add a competitive advantage to the company's SoMe presence. 
  
 ### About the Process
 We went through a 4-day course on Unity 3D and 1 day on Ideation. We worked with Scrum. An experienced tutor guided us while practising design methods from the [Amsterdam MediaLab's Toolkit](https://toolkits.dss.cloud/design/).   
 We researched about the target group of the company, and through ideation tecniques we developed a series of prototypes. 
 After iterative user testing we ended up with a working AR mobile application that we pitched to the client during an open event. 
-Recomendation letter available.
+  
 [![Watch the video](https://raw.githubusercontent.com/stefanosAgelastos/gps-tourist-app/master/docs/youtube.png)](https://youtu.be/Lbq94Ef9qJY?t=5).
   
-### First working prototype:
+Recomendation letter available. Team: Charlène Marteyn, Modestas Šekštela, Stefanos Agelastos.
+
+### V2.0: First working prototype:
 Together with two colleagues we developed an augmented reality android tourist guide and a supporting administration system. 
 The user harvests GPS and AR technologies through their phone and consumes content relevant to their location. 
 The system administrator can add new locations and feed the application with new content.  
@@ -26,19 +30,29 @@ We combined Scrum and Design thinking. Both methodologies are iterative and incr
   
 ![overview](https://raw.githubusercontent.com/stefanosAgelastos/gps-tourist-app/master/docs/process.png) 
   
+Exam evaluation: excellent. Team: Alexander Kellberg, Kristian Skovlund Rasmussen, Stefanos Agelastos.
+  
 ## Built With
+
+▪ Android APK by Unity3D and Vuforia
+▪ React isomorphic front end application
+▪ Node.js express API and server side rendering
+▪ MongoDB for semi-structured data model persistence
+▪ Heroku PaaS staging environment 
+  
 The admin webapp is based on [MERN](http://mern.io), a scaffolding tool which makes it easy to build isomorphic apps using Mongo, Express, React and NodeJS. Read the [Documentation](http://mern.io/documentation.html).
 The android app was made on the [Unity](https://unity.com/) real-time 3d development platform and [Vuforia](https://www.vuforia.com/) library, which provided web, gps and augmented reality capabilitities.
-Currently the solution has the following architecture:
+Currently the solution has the following architecture:  
+  
 ![solution](https://raw.githubusercontent.com/stefanosAgelastos/gps-tourist-app/master/docs/solution.png) 
   
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-**Note : Please make sure your MongoDB is running.** For MongoDB installation guide see [this](https://docs.mongodb.org/v3.0/installation/). Also `npm6` is required to install dependencies properly.
+**Note : Please make sure your MongoDB is running.** For MongoDB installation guide see [this](https://docs.mongodb.org/v3.0/installation/). Also **npm6** is required to install dependencies properly.
 
 ## Available Commands
 
