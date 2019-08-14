@@ -40,7 +40,7 @@ Exam evaluation: excellent. Team: Alexander Kellberg, Kristian Skovlund Rasmusse
 ▪ MongoDB for semi-structured data model persistence
 ▪ Heroku PaaS staging environment 
   
-The admin webapp is based on [MERN](http://mern.io), a scaffolding tool which makes it easy to build isomorphic apps using Mongo, Express, React and NodeJS. Read the [Documentation](http://mern.io/documentation.html).
+The admin webapp allows you to add Locations to a database, and provide them as a REST resource to the android APK. The admin webapp is based on [MERN](http://mern.io), a scaffolding tool which makes it easy to build isomorphic apps using Mongo, Express, React and NodeJS. Read the [Documentation](http://mern.io/documentation.html).
 The android app was made on the [Unity](https://unity.com/) real-time 3d development platform and [Vuforia](https://www.vuforia.com/) library, which provided web, gps and augmented reality capabilitities.
 Currently the solution has the following architecture:  
   
@@ -48,7 +48,7 @@ Currently the solution has the following architecture:
   
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the administration and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -87,7 +87,7 @@ If NODE_ENV is development, we apply Webpack middlewares for bundling and Hot Mo
 We use React Router's match function for handling all page requests so that browser history works.
 
 All the routes are defined in `client/routes.js`. React Router renders components according to route requested.
-
+<!---
 ```js
 // Server Side Rendering based on routes matched by React-router.
 app.use((req, res) => {
@@ -104,8 +104,8 @@ app.use((req, res) => {
         }
 
         const initialState = {
-            posts: [],
-            post: {}
+            locations: [],
+            location: {}
         };
 
         const store = configureStore(initialState);
@@ -134,7 +134,7 @@ If there's an error in matching we return 500 status code, if no matches are fou
 **Note:** A new Redux Store has populated afresh on every request.
 
 `fetchComponentData` is the essential function. It takes three params: first is a dispatch function of Redux store, the second is an array of components that should be rendered in current route and third is the route params. `fetchComponentData` collects all the needs (need is an array of actions that are required to be dispatched before rendering the component) of components in the current route. It returns a promise when all the required actions are dispatched. We render the page and send data to the client for client-side rendering in `window.__INITIAL_STATE__`.
-
+--->
 ### Client
 
 Client directory contains all the shared components, routes, modules.
@@ -149,32 +149,32 @@ Index.js simply does client side rendering using the data provided from `window.
 Modules are the way of organising different domain-specific modules in the project. A typical module contains the following
 ```
 .
-└── Post
+└── Location
     ├── __tests__                    // all the tests for this module goes here
     |   ├── components               // Sub components of this module
-    |   |   ├── Post.spec.js
-    |   |   ├── PostList.spec.js
-    |   |   ├── PostItem.spec.js
-    |   |   └── PostImage.spec.js
+    |   |   ├── Location.spec.js
+    |   |   ├── LocationList.spec.js
+    |   |   ├── LocationItem.spec.js
+    |   |   └── LocationImage.spec.js
     |   ├── pages
-    |   |   ├── PostPage.spec.js
-    |   |   └── PostViewPage.spec.js
-    |   ├── PostReducer.spec.js
-    |   └── PostActions.spec.js
+    |   |   ├── LocationPage.spec.js
+    |   |   └── LocationViewPage.spec.js
+    |   ├── LocationReducer.spec.js
+    |   └── LocationActions.spec.js
     ├── components                   // Sub components of this module
-    |   ├── Post.js
-    |   ├── PostList.js
-    |   ├── PostItem.js
-    |   └── PostImage.js
+    |   ├── Location.js
+    |   ├── LocationList.js
+    |   ├── LocationItem.js
+    |   └── LocationImage.js
     ├── pages                        // React Router Pages from this module
-    |   ├── PostPage
-    |   |   ├── PostPage.js
-    |   |   └── PostPage.css
-    |   └── PostViewPage
-    |       ├── PostViewPage.js
-    |       └── PostViewPage.css
-    ├── PostReducer.js
-    └── PostActions.js
+    |   ├── LocationPage
+    |   |   ├── LocationPage.js
+    |   |   └── LocationPage.css
+    |   └── LocationViewPage
+    |       ├── LocationViewPage.js
+    |       └── LocationViewPage.css
+    ├── LocationReducer.js
+    └── LocationActions.js
 ```
 
 ## Misc
@@ -207,7 +207,7 @@ To reset the database:
 ```sh
 docker-compose down --volumes
 ```
-
+<!---
 ### Make your MERN
 In this version, we enabled the `mern-cli` to clone not only this project but also the variants of `mern-starter` like one project with MaterialUI or JWT auth. To make your version of MERN, follow these steps
 
@@ -288,6 +288,6 @@ In development, after all scripts get loaded, react loads the CSS as BLOBs. That
 
 #### Client and Server Markup Mismatch
 This warning is visible only on development and totally harmless. This occurs to hash difference in `react-router`. To solve it, react router docs asks you to use `match` function. If we use `match`, `react-hot-reloader` stops working.
-
+--->
 ## License
 MERN is released under the [MIT License](http://www.opensource.org/licenses/MIT).
