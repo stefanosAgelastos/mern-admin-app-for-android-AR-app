@@ -70,6 +70,20 @@ These instructions will get you a copy of the administration and running on your
 
 ## File Structure
 
+### Model
+This is the data structure of the location objects.
+```
+location: {                                // data provided as REST resource
+        author,
+        title,
+        lon,                               // gps coordinates of the location
+        lat,
+        images: [                          // media to be displayed as AR content
+          { id, image_title, image_url }   // title and url of the media file
+        ],
+      },
+```
+
 ### Webpack Configs
 
 MERN uses Webpack for bundling modules. There are four types of Webpack configs provided `webpack.config.dev.js` (for development), `webpack.config.prod.js` (for production), `webpack.config.server.js` (for bundling server in production) and `webpack.config.babel.js` (for [babel-plugin-webpack-loaders](https://github.com/istarkov/babel-plugin-webpack-loaders) for server rendering of assets included through webpack).
@@ -87,54 +101,7 @@ If NODE_ENV is development, we apply Webpack middlewares for bundling and Hot Mo
 We use React Router's match function for handling all page requests so that browser history works.
 
 All the routes are defined in `client/routes.js`. React Router renders components according to route requested.
-<!---
-```js
-// Server Side Rendering based on routes matched by React-router.
-app.use((req, res) => {
-    match({
-        routes,
-        location: req.url
-    }, (err, redirectLocation, renderProps) => {
-        if (err) {
-            return res.status(500).end('Internal server error');
-        }
 
-        if (!renderProps) {
-            return res.status(404).end('Not found!');
-        }
-
-        const initialState = {
-            locations: [],
-            location: {}
-        };
-
-        const store = configureStore(initialState);
-
-        fetchComponentData(store.dispatch, renderProps.components, renderProps.params).then(() => {
-            const initialView = renderToString(
-                <Provider store = {store} >
-                  <RouterContext {...renderProps}/>
-                </Provider>
-            );
-
-            const finalState = store.getState();
-
-            res.status(200).end(renderFullPage(initialView, finalState));
-        }).catch(() => {
-            res.end(renderFullPage('Error', {}));
-        });
-    });
-});
-```
-
-`match` takes two parameters, first is an object that contains routes, location and history and second is a callback function which is called when routes have been matched to a location.
-
-If there's an error in matching we return 500 status code, if no matches are found we return 404 status code. If a match is found then, we need to create a new Redux Store instance.
-
-**Note:** A new Redux Store has populated afresh on every request.
-
-`fetchComponentData` is the essential function. It takes three params: first is a dispatch function of Redux store, the second is an array of components that should be rendered in current route and third is the route params. `fetchComponentData` collects all the needs (need is an array of actions that are required to be dispatched before rendering the component) of components in the current route. It returns a promise when all the required actions are dispatched. We render the page and send data to the client for client-side rendering in `window.__INITIAL_STATE__`.
---->
 ### Client
 
 Client directory contains all the shared components, routes, modules.
@@ -207,87 +174,6 @@ To reset the database:
 ```sh
 docker-compose down --volumes
 ```
-<!---
-### Make your MERN
-In this version, we enabled the `mern-cli` to clone not only this project but also the variants of `mern-starter` like one project with MaterialUI or JWT auth. To make your version of MERN, follow these steps
 
-1. Clone this project
-    ```sh
-    git clone https://github.com/Hashnode/mern-starter
-    ```
-
-2. Make your changes. Add a package, add authentication, modify the file structure, replace Redux with MobX or anything else.
-
-3. In this version, we also added code generators. Blueprints for those generators are located at `config/blueprints`, and config is located at `mern.json`. Make sure to edit them if necessary after your made modifications in the previous step. There is a section below which explains how to modify generators.
-
-4. Next clone `mern-cli` project
-    ```sh
-    git clone https://github.com/Hashnode/mern-cli
-    ```
-
-5. Add your project details to `variants.json` in the cloned project and send a pull request.
-
-### Modifying Generators
-
-#### mern.json
-It contains a blueprints array. Each object in it is the config for a generator. A blueprint config contains the name, description, usage, and files array. An example blueprint config
-```json
-{
-  "name": "dumb-s",
-  "description": "Generates a dumb react component in shared components",
-  "usage": "dumb-s [component-name]",
-  "files": [
-    {
-      "blueprint-path": "config/blueprints/dumb-component.ejs",
-      "target-path": "client/components/<%= helpers.capitalize(name) %>.js"
-    }
-  ]
-}
-```
-
-A file object contains
-
-1. `blueprint-path` - location of the blueprint file
-
-2. `target-path` - location where the file should be generated
-
-3. `parent-path` - optional parameter, used if you want to generate the file inside an already existing folder in your project.
-
-Also, `target-path` supports [ejs](https://github.com/mde/ejs) and the following variables will be passed while rendering,
-
-1. `name` - `<component-name>` input from user
-
-2. `parent` - in particular special cases where you need to generate files inside an already existing folder, you can obtain this parent variable from the user. A config using that will look like,
-    ```json
-    {
-      "name": "dumb-m",
-      "description": "Generates a dumb react component in a module directory",
-      "usage": "dumb-m <module-name>/<component-name>",
-      "files": [
-        {
-          "blueprint-path": "config/blueprints/dumb-component.ejs",
-          "parent-path": "client/modules/<%= helpers.capitalize(parent) %>",
-          "target-path": "components/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.js"
-        }
-      ]
-    }
-    ```
-    Here, notice the usage. In `<module-name>/<component-name>`, `<module-name>` will be passed as `parent` and `<component-name>` will be passed as `<name>`.
-
-3. `helpers` - an helper object is passed which include common utility functions. For now, it contains `capitalize`. If you want to add more, send a PR to [mern-cli](https://github.com/Hashnode/mern-cli).
-
-#### Blueprint files
-Blueprints are basically [ejs](https://github.com/mde/ejs) templates which are rendered with the same three variables (`name`, optional `parent` and `helpers` object) as above.
-
-### Caveats
-
-#### FOUC (Flash of Unstyled Content)
-To make the hot reloading of CSS work, we are not extracting CSS in development. Ideally, during server rendering, we will be extracting CSS, and we will get a .css file, and we can use it in the html template. That's what we are doing in production.
-
-In development, after all scripts get loaded, react loads the CSS as BLOBs. That's why there is a second of FOUC in development.
-
-#### Client and Server Markup Mismatch
-This warning is visible only on development and totally harmless. This occurs to hash difference in `react-router`. To solve it, react router docs asks you to use `match` function. If we use `match`, `react-hot-reloader` stops working.
---->
 ## License
 MERN is released under the [MIT License](http://www.opensource.org/licenses/MIT).
