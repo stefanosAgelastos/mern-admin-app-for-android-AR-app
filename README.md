@@ -53,6 +53,7 @@ Recomendation letter available. Team: Charlène Marteyn, Modestas Šekštela, St
 </Panel>
 
 <Panel id="2" heading="Phase 2" secondaryHeading="System Development" >
+  
 ### Goal: MVP Development
 Together with two colleagues we developed an augmented reality android tourist guide and a supporting administration system. 
 The user harvests GPS and AR technologies through their phone and consumes content relevant to their location. 
